@@ -55,6 +55,22 @@ class Food(db.Model):
     def get_user_of_post(food_id):
         return Food.query.filter_by(id=food_id).first().user() # TODO LOOK AT IT!!!!!!!!!!
 
+class FoodSchema(Schema):
+    id = fields.Int(dump_only=True)
+    brand = fields.Str(required=True)
+    food_form = fields.Str(required=True)
+    packaging_type = fields.Str(required=True)
+    protein = fields.Str(required=True)
+    lifestage = fields.Str(required=True)
+    breed_size = fields.Str(required=True)
+    special_diet = fields.Str(required=True)
+    created = fields.DateTime(dump_only=True)
+    # created_by int fields with user_id
+    updated = fields.DateTime(dump_only=True)
+    # updated_by
+
+
+
 
 
 
