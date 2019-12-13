@@ -11,7 +11,7 @@ class User(db.Model):
     created = db.Column(db.DateTime)
     modified = db.Column(db.DateTime)
 
-    def __init__(self, email, password, name, surname=None, created, modified):
+    def __init__(self, email, password, name, created, modified, surname=None):
         self.email = email
         self.password = password
         self.name = name

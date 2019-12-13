@@ -29,3 +29,4 @@ def new_recipe(data, user):
 def edit_recipe(food_id, data):
     recipe_id = Food.get_food_item(food_id)
     updated = food_id.update()
+

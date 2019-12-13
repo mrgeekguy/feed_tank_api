@@ -15,7 +15,7 @@ def login():
     if bcrypt.check_password_hash(to_check.password, body["password"]):
         access_token = create_access_token(to_check.id)
         return {
-            "message": "Logged In"
+            "message": "Logged In",
             "token": access_token
         }
     else:
@@ -26,6 +26,7 @@ def login():
 # Logout route
 @auth_blueprint.route("/logout", methods=["POST"])
 def logout():
+    pass
     # TODO token deauthentication
 
 # Registration route
@@ -35,8 +36,8 @@ def register():
     message = create_user(
         body["email"],
         bcrypt.generate_password_hash(body["password"]),
-        body["name"]
-        body["surname"]
+        body["name"],
+        body["surname"],
     )
 
     return {
