@@ -26,8 +26,8 @@ def login():
 # Logout route
 @auth_blueprint.route("/logout", methods=["POST"])
 def logout():
+    # TODO logout build
     pass
-    # TODO token deauthentication
 
 # Registration route
 @auth_blueprint.route("/register", methods=["POST"])
